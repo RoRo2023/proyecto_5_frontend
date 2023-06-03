@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1{
+  margin: 0;
+}
+
+h2{
+  margin: 0;
+}
+
+h3{
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: #efefef;
+  
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 40px;
+  list-style: none;
+  white-space: nowrap;
+  margin: 0;
+  font-weight: 600;
+}
+
+
+/*Header*/
+header{
+  background-color: #083d5e;
+  position: fixed;
+  width: 100%;
+}
+
+header nav{
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 0 20px 0;
+  color: white;
+  justify-content: space-between
+}
+
+.header-logo h1{
+  margin-bottom: 5px;
+}
+
+.header-text{
+  display: flex;
+  align-items: center;
+}
+
+
+/*Jumbotron*/
+
+
+/*Catalogo*/
+
+
+/*Footer*/
