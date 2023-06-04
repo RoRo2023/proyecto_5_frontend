@@ -1,3 +1,8 @@
+import "bootstrap-icons/font/bootstrap-icons.css";
+import '../index.css'
+import '../App.css'
+
+
 function HeaderComponent(){
 
     return(
@@ -9,9 +14,9 @@ function HeaderComponent(){
                 </div>
                 <div className="header-text">
                     <ul>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">¿Quiénes somos?</a></li>
-                        <li><a href="#">Reservaciones</a></li>
+                        <li><a href="#">Iniciar sesión</a></li>
+                        <li>|</li>
+                        <li><a href="#">Registrarse</a></li>
                     </ul>
                 </div>
             </nav>

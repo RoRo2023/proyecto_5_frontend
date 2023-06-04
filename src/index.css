@@ -51,19 +51,23 @@ header{
   background-color: #083d5e;
   position: fixed;
   width: 100%;
+  z-index: 5;
 }
 
 header nav{
   width: 75%;
   margin: 0 auto;
   display: flex;
-  padding: 10px 0 20px 0;
+  padding: 15px 0;
   color: white;
   justify-content: space-between
 }
 
-.header-logo h1{
-  margin-bottom: 5px;
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 .header-text{
@@ -71,11 +75,69 @@ header nav{
   align-items: center;
 }
 
+.header-logo h1{
+  margin-left: 30px;
+}
+
+.bi-arrow-up-square{
+  position: absolute;
+  right:240px;
+  bottom: 5px;
+  
+}
 
 /*Jumbotron*/
-
+.carrusel{
+  padding-top: 65px;
+}
 
 /*Catalogo*/
 
 
 /*Footer*/
+footer{
+  /*background-color: #0a1128;*/
+  background-color: black;
+  color: white;
+}
+
+footer nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 75%;
+  margin: 0 auto;
+  
+  padding-top: 30px;
+}
+
+.redes-sociales{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.list{
+  text-align: left;
+}
+
+dt{
+  font-weight: 400;
+  font-size: 18px;
+}
+
+dd{
+  margin-inline-start: 0;
+}
+.redes-sociales p{
+  font-size: 30px;
+}
+
+.foot{
+  border-color: rgb(170, 170, 170);
+    border-top-style: solid;
+    border-top-width: 1px;
+    max-width: 1170px;
+    width: 100%;
+    margin: 50px auto 0;
+    padding: 30px 0 10px;
+}
