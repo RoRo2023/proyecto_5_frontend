@@ -46,7 +46,7 @@ const SignUp = ({ setToken, setUser }) => {
                 <Form.Label>Age</Form.Label>
                 <Form.Control value={age} onChange={(e) => setAge(e.target.value)} type="text" />
             </Form.Group>
-            <Button onClick={onSubmit} variant="primary">Signin</Button>
+            <Button onClick={onSubmit} variant="primary">SignUp.</Button>
         </Form>
     )
 

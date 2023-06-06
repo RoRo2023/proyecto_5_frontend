@@ -12,11 +12,9 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <React.StrictMode>
       <UserContex>
         <App />
       </UserContex>
-    </React.StrictMode>
   </BrowserRouter>
   
 );
