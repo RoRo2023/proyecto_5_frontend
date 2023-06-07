@@ -1,6 +1,10 @@
+//Estilos
 import "bootstrap-icons/font/bootstrap-icons.css";
 import '../index.css'
 import '../App.css'
+
+//Utilidades
+import { Link } from 'react-router-dom';
 
 
 function HeaderComponent(){
@@ -9,14 +13,13 @@ function HeaderComponent(){
         <header>
             <nav>
                 <div className="header-logo">
-                    <h1><i class="bi bi-arrow-up-square"></i>LEVEL UP</h1>
-                    
+                    <Link to='/'><h1><i class="bi bi-arrow-up-square"></i>LEVEL UP</h1></Link>                  
                 </div>
                 <div className="header-text">
                     <ul>
-                        <li><a href="#">Iniciar sesión</a></li>
+                        <li><Link to='/login'><a href="#">Iniciar sesión</a></Link></li>
                         <li>|</li>
-                        <li><a href="#">Registrarse</a></li>
+                        <li><Link to='/signup'><a href="#">Registrarse</a></Link></li>
                     </ul>
                 </div>
             </nav>
