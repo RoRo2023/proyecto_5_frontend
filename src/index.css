@@ -90,6 +90,26 @@ header nav{
   
 }
 
+.active-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.active-user li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.active-user p{
+  font-size: 20px;
+}
+
+.bi-person-circle{
+  font-size: 25px;
+}
+
 /*Jumbotron*/
 .carrusel{
   padding-top: 65px;

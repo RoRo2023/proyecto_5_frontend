@@ -32,7 +32,7 @@ const signup = async (email, name, password, age) => {
                 age: age
             }
         )
-
+        
         return response.data;
     } catch (error) {
         return null;

@@ -9,12 +9,10 @@ import { UserContext } from '../context/userContex';
 
 function NavigationRoute() {
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState('Usuario Prueba');
     const [token, setToken] = useState('');
 
-    const { 
-        userContex
-    } = useContext(UserContext)
+    const { userContex } = useContext(UserContext)
 
     useEffect(() => {
         console.log(userContex);
