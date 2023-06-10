@@ -9,7 +9,7 @@ import { UserContext } from '../context/userContex';
 
 function NavigationRoute() {
 
-    const [user, setUser] = useState('Usuario Prueba');
+    const [user, setUser] = useState(null);
     const [token, setToken] = useState('');
 
     const { userContex } = useContext(UserContext)
