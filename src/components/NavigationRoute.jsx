@@ -4,6 +4,9 @@ import Login from '../pages/Login';
 import Pay from '../pages/Pay';
 import SignUp from '../pages/SignUp';
 
+import HeaderComponent from './Header';
+import Footer from './Footer';
+
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../context/userContex';
 
@@ -29,9 +32,13 @@ function NavigationRoute() {
             />}></Route>
             :
             <Route path='/login' element={
-              <h1>
-                Bienvenido
-              </h1>
+              <>
+                <HeaderComponent/>
+                <h1 style={{padding: "100px 0 250px"}}>
+                  Bienvenido
+                </h1>
+                <Footer/>
+              </>
             }></Route>
           }
             <Route path='/signup' element={<SignUp/>} />

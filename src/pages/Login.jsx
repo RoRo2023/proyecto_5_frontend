@@ -11,7 +11,7 @@ import { UserContext } from "../context/userContex";
 //Estilos
 import '../index.css';
 
-const Login = ({ setToken, setUser }) =>{
+const Login = () =>{
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -31,9 +31,7 @@ const Login = ({ setToken, setUser }) =>{
             } else {
                 console.log(data);
                 // useState
-                setToken(data.token);
-                setUser(data.user); 
-                setUserContext(data.user); // context
+                setUserContext(data.user.user); // context
             }
         }
 

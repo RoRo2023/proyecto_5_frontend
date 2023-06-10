@@ -123,6 +123,14 @@ header nav{
   justify-content: space-evenly;
 }
 
+.catalogo{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 75%;
+  row-gap: 20px;
+  padding: 50px 0;
+}
+
 .item-card{
   background-color: white;
   border-color: black;
@@ -130,22 +138,36 @@ header nav{
   border-radius: 10px;
   padding: 15px;
   width: 250px;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .item-top{
   display: flex;
+  flex-direction: column;
+}
+
+.item-top img{
+  justify-content: center;
+}
+
+.badge{
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 .item-bottom{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .store-button{
-  max-height: 40px;
+  max-height: 56px;
 }
 
 .bi-cart-plus{

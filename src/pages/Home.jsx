@@ -4,7 +4,6 @@ import JumbotronComponent from "../components/Jumbotron";
 import Catalog from "../components/Catalog";
 import Carrito from "../components/Carrito";
 import Footer from "../components/Footer";
-import TestButton from "../components/TestButton";
 
 //Estilos
 import '../index.css';
@@ -14,10 +13,8 @@ function Home(){
         <>
             <HeaderComponent/>
             <JumbotronComponent/>
-            <TestButton/>
             <div>
                 <Catalog/>
-                <Carrito/>
             </div>
             <Footer/>
         </>
