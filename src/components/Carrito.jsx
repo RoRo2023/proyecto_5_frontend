@@ -7,7 +7,6 @@ import { useContext, useState, useEffect} from 'react';
 function Carrito(){
 
     const [data, setData] = useState(null);
-    const [total, setTotal] = useState(0);
     const context = useContext(CatalogContext);
     
     useEffect(() => {
@@ -46,8 +45,8 @@ function Carrito(){
                 className="modal show"
                 style={{ display: 'block', position: 'initial' }}
             >
-
-                <Modal.Dialog>
+                <div style={{paddingLeft:"350px"}}></div>
+                <Modal.Dialog id='carrito'>
                     <Modal.Header>
                         <Modal.Title>Carrito</Modal.Title>
                     </Modal.Header>
@@ -57,7 +56,7 @@ function Carrito(){
                             data.map((product, index)=> (
                                 <div className='store-item'>
                                     <div>
-                                        <img src={product.imagen} style={{maxWidth: "20px"}}/>
+                                        <img alt='' src={product.imagen} style={{maxWidth: "30px"}}/>
                                         <p className='item-name'>{product.nombre}</p>
                                     </div>
                                     <div>

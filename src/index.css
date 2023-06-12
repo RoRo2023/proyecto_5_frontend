@@ -128,6 +128,7 @@ header nav{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 75%;
   row-gap: 20px;
+  column-gap: 10px;
   padding: 50px 0;
 }
 
@@ -175,6 +176,15 @@ header nav{
 }
 
 /* Carrito */
+#carrito{
+  position: fixed;
+  z-index: 2;
+  top: 50px;
+  right: 0;
+
+  max-width: 350px;
+}
+
 .store-item{
   border-top-style: solid;
   border-top-width: 1px;

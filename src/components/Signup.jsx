@@ -1,15 +1,32 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect} from "react";
 import { Button, Form } from "react-bootstrap";
-import { signup } from "../services/user";
+import { signup, login } from "../services/user";
+import { UserContext } from '../context/userContex';
+import { useNavigate } from "react-router-dom";
 
 import '../index.css';
 
-const SignUpComponent = ({ setToken, setUser }) => {
+const SignUpComponent = () => {
 
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [age, setAge] = useState('');
+
+    const navigate = useNavigate();
+
+    const { 
+        setUserContext,
+        userContex
+    } = useContext(UserContext)
+
+    useEffect(() => {
+        if(!userContex){
+          navigate("/signup")
+        } else{
+          navigate('/')
+        }
+    }, [userContex])
 
     const onSubmit = async () => {
 
@@ -20,11 +37,13 @@ const SignUpComponent = ({ setToken, setUser }) => {
                 alert('Error de authenticacion');
             } else {
                 console.log(data);
-                // useState
-                setEmail(data.email);
-                setName(data.name);
-                setPassword(data.password);
-                setAge(data.age);
+
+                const dataLogin = await login(email, password);
+                if (!dataLogin) {
+                    alert('Error de authenticacion');
+                } else {
+                    setUserContext(dataLogin.user.user); // context
+                }
             }
         }
 

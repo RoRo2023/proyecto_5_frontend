@@ -1,8 +1,6 @@
-//import { getCatalog } from "../services/catalog";
-import React, { useEffect, useState, useContext} from "react";
+import React, { useContext} from "react";
 import { useFetch } from "../hooks/useFetch";
 //Estilos
-import { Badge, Button } from "react-bootstrap";
 
 import Carrito from "./Carrito";
 
@@ -51,7 +49,7 @@ function Catalog (){
                                         <h2 style={{textAlign: "left"}}>{product.nombre}</h2>
                                     </div>
                                 </div>
-                                <img src={product.imagen} style={{maxWidth: "220px"}}/>
+                                <img alt="" src={product.imagen} style={{maxWidth: "220px"}}/>
                                 <div className="item-bottom">
                                     <div>
                                         <p style={{fontSize: "45px"}}>{`$${numberWithCommas(product.precio)}`}</p>

@@ -5,14 +5,20 @@ import '../App.css'
 
 //Utilidades
 import { Link } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../context/userContex';
+
+import { Dropdown } from "react-bootstrap";
 
 
 
 function HeaderComponent(){
 
     const context = useContext(UserContext);
+
+    const cerrarSesion = () => {
+        context.setUserContext(null)
+    }
 
     return(
         <header>
@@ -31,11 +37,15 @@ function HeaderComponent(){
                 </div>
                 :
                 <div className="active-user">
-                    <ul>
-                        <li>
-                            <p dangerouslySetInnerHTML={ {__html: context.userContex} }></p>&nbsp;&nbsp;<i class="bi bi-person-circle"></i>
-                        </li>
-                    </ul>
+                    <Dropdown>
+                        <Dropdown.Toggle id="dropdown-basic" style={{color: "white", backgroundColor: "#083d5e", border: "none", fontSize: "24px", fontWeight:"600", height:"36px", paddingTop:"0"}}>
+                        {context.userContex}&nbsp;&nbsp;<i class="bi bi-person-circle"></i>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item onClick={cerrarSesion}>Cerrar sesión</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
                 }
             </nav>

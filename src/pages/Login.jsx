@@ -1,25 +1,35 @@
 //Componentes
 import HeaderComponent from "../components/Header";
-import LoginComponent from "../components/Login";
 import Footer from "../components/Footer";
 
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { login } from "../services/user";
 import { UserContext } from "../context/userContex";
+import { useNavigate } from "react-router-dom";
 
 //Estilos
 import '../index.css';
 
 const Login = () =>{
 
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const { 
-        setTokenContext,
-        setUserContext
+        setUserContext,
+        userContex
     } = useContext(UserContext)
+
+    useEffect(() => {
+        if(!userContex){
+          navigate("/login")
+        } else{
+          navigate('/')
+        }
+    }, [userContex])
 
     const onSubmit = async () => {
 
