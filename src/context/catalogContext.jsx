@@ -4,14 +4,14 @@ export const CatalogContext = createContext();
 
 export default ({ children }) => {
 
-    const [catalogContex, setCatalogContext] = useState([]);
+    const [totalContex, setTotalContext] = useState(0);
     const [carritoContex, setCarritoContext] = useState([]);
 
     return (
         <CatalogContext.Provider
             value={{
-                catalogContex,
-                setCatalogContext,
+                totalContex,
+                setTotalContext,
                 carritoContex,
                 setCarritoContext
             }}

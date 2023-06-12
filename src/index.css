@@ -21,7 +21,7 @@ h2{
   font-size: 20px;
 }
 
-h3{
+h4{
   margin: 0;
 }
 
@@ -120,7 +120,7 @@ header nav{
 .compra{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .catalogo{
@@ -172,6 +172,36 @@ header nav{
 
 .bi-cart-plus{
   font-size: 30px;
+}
+
+/* Carrito */
+.store-item{
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-color: gray;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store-item div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-name{
+  text-align: left;
+}
+
+.finish-sale{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /*Login */

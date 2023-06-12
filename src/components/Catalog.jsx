@@ -8,40 +8,30 @@ import Carrito from "./Carrito";
 
 import { CatalogContext } from "../context/catalogContext";
 import BadgeComponent from "./Badge";
+import StoreButton from "./StoreButton";
 
 function Catalog (){
     const context = useContext(CatalogContext);
-    /*
-    const [products, setProducts] = useState(null);
 
-    useEffect(() => {
-        loadCatalog();
-    
-    }, []);
-
-    const onSubmit=(object)=>{
-        context.setCarritoContext(oldArray => [...oldArray, object]);
-    }
-
-    //const cardText = loadCatalog();
-    const loadCatalog = async() => {
-        const response = await getCatalog();
-        try{
-            console.log(response);
-            setProducts(response.catalogo)
-        }catch(error){
-            console.log(error)
-        }
-        return(
-            response.catalogo
-        )
-        
-    }
-*/
     const { data } = useFetch({
         url:'http://localhost:5500/catalog'
     })
-    console.log(data)
+
+      const onSubmit = async event => {
+        try{
+            const item = await event.currentTarget.id;
+            context.setCarritoContext(oldArray => [...oldArray, data[item]]);
+            const precio = await data[item].precio;
+            context.setTotalContext(context.totalContex+parseInt(precio));
+            console.log(context.totalContex);
+        }catch (error){
+            console.log(error)
+        }
+      };
+
+      function numberWithCommas(num) { 
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); 
+      }
 
     return(
         
@@ -51,7 +41,7 @@ function Catalog (){
                     {
                         !data ? <span>Sin productos</span>
                         :
-                        data.data.catalogo.map((product)=> (
+                        data.map((product, index)=> (
                             <div className="item-card">
                                 <div className="item-top">
                                     <div className="badge">
@@ -64,18 +54,16 @@ function Catalog (){
                                 <img src={product.imagen} style={{maxWidth: "220px"}}/>
                                 <div className="item-bottom">
                                     <div>
-                                        <p style={{fontSize: "45px"}}>{product.precio}</p>
+                                        <p style={{fontSize: "45px"}}>{`$${numberWithCommas(product.precio)}`}</p>
                                     </div>
-                                    <Button variant="success" className="store-button"><i class="bi bi-cart-plus"></i></Button>
+                                    <StoreButton thisId={index} onPress={onSubmit}/>
                                 </div>
                             </div>
-                        ))
+                        )
+                        )
                     }
                 </div>
-                <hr />
-                <div className="carrito">
-                    <Carrito/>
-                </div>
+                <Carrito/>
             </nav>
         </>
     )
