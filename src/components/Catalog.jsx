@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 //Estilos
 
@@ -61,7 +61,7 @@ function Catalog (){
                         )
                     }
                 </div>
-                <Carrito/>
+                <Carrito ModalId={"carrito"} itemClass={"store-item"} />
             </nav>
         </>
     )

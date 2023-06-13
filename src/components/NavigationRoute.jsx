@@ -1,11 +1,12 @@
 import { Routes, Route,  Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
-import Pay from '../pages/Pay';
+import Pay from '../pages/Checkout';
 import SignUp from '../pages/SignUp';
 
 import { useContext, useState } from 'react';
 import { UserContext } from '../context/userContex';
+import Checkout from '../pages/Checkout';
 
 function NavigationRoute() {
 
@@ -24,7 +25,7 @@ function NavigationRoute() {
             }></Route>
             <Route path='*' element={<Navigate to='/' />} />
             <Route path='/signup' element={<SignUp/>} />
-            <Route path='/paypal' element={<Pay/>} />
+            <Route path='/checkout' element={<Checkout/>} />
         </Routes>
     )
 }

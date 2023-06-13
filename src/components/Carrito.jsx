@@ -2,12 +2,15 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import { CatalogContext } from "../context/catalogContext";
+import { UserContext } from '../context/userContex';
 import { useContext, useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
-function Carrito(){
+function Carrito({ModalId, itemClass}){
 
     const [data, setData] = useState(null);
     const context = useContext(CatalogContext);
+    const userContext = useContext(UserContext);
     
     useEffect(() => {
         if (context.carritoContex.length !== 0){
@@ -46,7 +49,7 @@ function Carrito(){
                 style={{ display: 'block', position: 'initial' }}
             >
                 <div style={{paddingLeft:"350px"}}></div>
-                <Modal.Dialog id='carrito'>
+                <Modal.Dialog id={ModalId}>
                     <Modal.Header>
                         <Modal.Title>Carrito</Modal.Title>
                     </Modal.Header>
@@ -54,9 +57,9 @@ function Carrito(){
                     <Modal.Body style={{minHeight:"100px", height:'fitcontent'}}>
                         {
                             data.map((product, index)=> (
-                                <div className='store-item'>
+                                <div className={itemClass}>
                                     <div>
-                                        <img alt='' src={product.imagen} style={{maxWidth: "30px"}}/>
+                                        <img alt='' src={product.imagen} />
                                         <p className='item-name'>{product.nombre}</p>
                                     </div>
                                     <div>
@@ -70,7 +73,15 @@ function Carrito(){
                 
                     <Modal.Footer className='finish-sale'>
                         <h4>{`Total: $${numberWithCommas(context.totalContex)}`}</h4>
-                        <Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button>
+                        {
+                            !userContext.userContex ?
+                            <>
+                                <Link to='/login'><Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button></Link>
+                                <p>*Cuenta de usuario requerida para finalizar el pago</p>
+                            </>
+                            :
+                            <Link to='/checkout'><Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button></Link>
+                        }
                     </Modal.Footer>
                 </Modal.Dialog>
             </div>
