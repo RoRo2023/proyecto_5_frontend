@@ -167,6 +167,10 @@ header nav{
   align-items: center;
 }
 
+.item-bottom>div>p{
+  font-size: 45px;
+}
+
 .store-button{
   max-height: 56px;
 }
@@ -258,7 +262,7 @@ header nav{
 
 
 .checkout>div>div>.modal{
-  height: 600px;
+  min-height: 600px;
 
   display: flex;
   flex-direction: column;
@@ -348,4 +352,85 @@ dd{
     width: 100%;
     margin: 50px auto 0;
     padding: 30px 0 10px;
+}
+
+@media screen and (max-width: 1460px) {
+  .catalogo{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+}
+
+@media screen and (max-width: 1140px) {
+  .catalogo{
+    grid-template-columns: 1fr 1fr;
+    padding-left: 10px;
+  }
+
+  .checkout{
+    flex-direction: column-reverse;
+  }
+
+  .checkout-container{
+    width: 100%;
+    padding-top: 0;
+    min-width: 100%;
+  }
+
+  .paypal-button-row{
+    width: 100%;
+  }
+
+  #carritoCheckout{
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .item-card{
+    width: 25vw;
+    height: 80vh;
+  }
+
+  .item-bottom>div>p{
+    font-size: 30px;
+  }
+
+  header nav{
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .item-card{
+    width: 20vw;
+    height: 70vh;
+  }
+
+  .item-bottom{
+    flex-direction: column;
+  }
+
+  h2{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #carrito{
+    max-width: 300px;
+  }
+
+  .header-text{
+    display: none!important;
+  }
+
+  .menu2{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+  }
 }

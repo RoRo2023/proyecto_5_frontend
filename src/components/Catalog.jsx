@@ -52,7 +52,7 @@ function Catalog (){
                                 <img alt="" src={product.imagen} style={{maxWidth: "220px"}}/>
                                 <div className="item-bottom">
                                     <div>
-                                        <p style={{fontSize: "45px"}}>{`$${numberWithCommas(product.precio)}`}</p>
+                                        <p>{`$${numberWithCommas(product.precio)}`}</p>
                                     </div>
                                     <StoreButton thisId={index} onPress={onSubmit}/>
                                 </div>

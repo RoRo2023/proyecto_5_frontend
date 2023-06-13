@@ -4,13 +4,15 @@ import Modal from 'react-bootstrap/Modal';
 import { CatalogContext } from "../context/catalogContext";
 import { UserContext } from '../context/userContex';
 import { useContext, useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Carrito({ModalId, itemClass}){
 
     const [data, setData] = useState(null);
     const context = useContext(CatalogContext);
     const userContext = useContext(UserContext);
+
+    const navigate = useLocation();
     
     useEffect(() => {
         if (context.carritoContex.length !== 0){
@@ -79,8 +81,9 @@ function Carrito({ModalId, itemClass}){
                                 <Link to='/login'><Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button></Link>
                                 <p>*Cuenta de usuario requerida para finalizar el pago</p>
                             </>
-                            :
+                            : navigate.pathname=='/checkout' ? null:
                             <Link to='/checkout'><Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button></Link>
+
                         }
                     </Modal.Footer>
                 </Modal.Dialog>
