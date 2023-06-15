@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 //Estilos
 import '../index.css';
+import context from "react-bootstrap/esm/AccordionContext";
 
 const Login = () =>{
 
@@ -17,6 +18,7 @@ const Login = () =>{
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [user, setUser] =useState(null)
 
     const { 
         setUserContext,
@@ -40,8 +42,12 @@ const Login = () =>{
                 alert('Error de authenticacion');
             } else {
                 console.log(data);
-                // useState
-                setUserContext(data.user.user); // context
+
+                setUserContext(data.user);
+                console.log(userContex)
+
+                setUser(data.user)
+                console.log(user)
             }
         }
 

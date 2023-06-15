@@ -1,12 +1,13 @@
 import { Routes, Route,  Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
-import Pay from '../pages/Checkout';
+import Checkout from '../pages/Checkout';
 import SignUp from '../pages/SignUp';
+import UserInfo from '../pages/UserInfo';
 
 import { useContext, useState } from 'react';
 import { UserContext } from '../context/userContex';
-import Checkout from '../pages/Checkout';
+
 
 function NavigationRoute() {
 
@@ -26,6 +27,7 @@ function NavigationRoute() {
             <Route path='*' element={<Navigate to='/' />} />
             <Route path='/signup' element={<SignUp/>} />
             <Route path='/checkout' element={<Checkout/>} />
+            <Route path='/userinfo' element={<UserInfo/>}/>
         </Routes>
     )
 }

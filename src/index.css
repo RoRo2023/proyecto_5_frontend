@@ -224,7 +224,7 @@ header nav{
 
 /*Login */
 .login{
-  padding: 100px 0 250px;
+  padding: 100px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -241,7 +241,7 @@ header nav{
 
 /*Signup*/
 .signup{
-  padding: 100px 0 250px;
+  padding: 100px 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -306,9 +306,87 @@ header nav{
   max-width: 50px;
 }
 
+/* User Info*/
+.user-page{
+  padding-top: 50px;
+  width: 75%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.user-icon{
+  font-size: 150px;
+}
+
+.user-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+
+.user-info p{
+  text-align: left;
+  padding-left: 40px;
+}
+
+.user-info h5{
+  text-align: left;
+  padding-left: 20px;
+}
+
+.user-page>div>div>.modal{
+  min-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+
+#carritoUser{
+  top: 50px;
+  right: 0;
+
+  width: 40vw;
+  margin: 0 0 0 auto;
+
+  
+}
+
+#carritoUser>.modal-content{
+  justify-self: right;
+
+}
+
+.store-itemUser{
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-color: gray;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store-itemUser div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.store-itemUser div img{
+  max-width: 50px;
+}
+
 /*Footer*/
 footer{
-  /*background-color: #0a1128;*/
   background-color: black;
   color: white;
 }

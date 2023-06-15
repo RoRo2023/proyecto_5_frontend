@@ -48,7 +48,7 @@ function Carrito({ModalId, itemClass}){
             :
             <div
                 className="modal show"
-                style={{ display: 'block', position: 'initial' }}
+                style={{ display: 'block', position: 'static'}}
             >
                 <div style={{paddingLeft:"350px"}}></div>
                 <Modal.Dialog id={ModalId}>

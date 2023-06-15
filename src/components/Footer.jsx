@@ -3,7 +3,7 @@
 function Footer(){
 
     return(
-       <footer>
+       <footer style={{marginTop:"30vh"}}>
           <nav>
             <div>
                 <d1 className="list">

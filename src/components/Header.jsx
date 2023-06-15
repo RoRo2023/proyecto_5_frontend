@@ -53,10 +53,11 @@ function HeaderComponent(){
                 <div className="active-user">
                     <Dropdown>
                         <Dropdown.Toggle id="dropdown-basic" style={{color: "white", backgroundColor: "#083d5e", border: "none", fontSize: "24px", fontWeight:"600", height:"36px", paddingTop:"0"}}>
-                        {context.userContex}&nbsp;&nbsp;<i class="bi bi-person-circle"></i>
+                        {context.userContex.user}&nbsp;&nbsp;<i class="bi bi-person-circle"></i>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
+                            <Link to='/userinfo'><Dropdown.Item href="#/action-1">Info</Dropdown.Item></Link>
                             <Dropdown.Item onClick={cerrarSesion}>Cerrar sesión</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
