@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 //Context
 import { useContext} from "react";
 import { UserContext } from '../context/userContex';
-import { CatalogContext } from "../context/catalogContext";
 
 function UserInfo(){
 
@@ -20,7 +19,7 @@ function UserInfo(){
                     <div className="user-info">
                         <div className="user-name" style={{padding:"20px 20px 0"}}>
                             <h1><i className="bi bi-person-circle user-icon"></i></h1>
-                            <h2 style={{color:"black", fontSize:"50px"}}>{userContext.userContex.user}</h2>
+                            <h3 style={{color:"black", fontSize:"50px"}}>{userContext.userContex.user}</h3>
                         </div>
                         <h5>Correo:</h5>
                         <p style={{color:"black", fontSize:"50px"}}>{userContext.userContex.email}</p>

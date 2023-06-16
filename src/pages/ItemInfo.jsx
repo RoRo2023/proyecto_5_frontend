@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
-import { useContext, useEffect } from 'react';
+import { useContext} from 'react';
 import { CatalogContext } from '../context/catalogContext';
 
 //Componentes
@@ -50,7 +50,7 @@ function ItemInfo(){
                 </Spinner>
                 :
                 <div className='info-card'>
-                    <div>
+                    <div className='info-img'>
                         <img src={data.imagen} alt="" style={{maxWidth: "400px"}}/>
                     </div>
                     <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", width:"100%"}}>

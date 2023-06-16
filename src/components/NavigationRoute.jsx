@@ -5,9 +5,7 @@ import Checkout from '../pages/Checkout';
 import SignUp from '../pages/SignUp';
 import UserInfo from '../pages/UserInfo';
 
-import { useContext, useState } from 'react';
-import { UserContext } from '../context/userContex';
-import { useFetch } from "../hooks/useFetch";
+import { useState } from 'react';
 import ItemInfo from '../pages/ItemInfo';
 
 

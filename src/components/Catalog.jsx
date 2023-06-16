@@ -51,7 +51,7 @@ function Catalog (){
                                         <h2 style={{textAlign: "left"}}>{product.nombre}</h2>
                                     </div>
                                 </div>
-                                <Link to={`/catalog/${product._id}`}><img alt="" src={product.imagen} style={{maxWidth: "220px"}}/></Link>
+                                <Link to={`/catalog/${product._id}`}><img alt="" src={product.imagen}/></Link>
                                 <div className="item-bottom">
                                     <div>
                                         <p>{`$${numberWithCommas(product.precio)}`}</p>

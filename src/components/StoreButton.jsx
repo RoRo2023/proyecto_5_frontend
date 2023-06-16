@@ -8,7 +8,7 @@ function StoreButton({ onPress, thisId }){
     return (
         <>
         {
-            navigate.pathname=='/' ? 
+            navigate.pathname==='/' ? 
             <Button id={thisId} variant="success" className="store-button" onClick={onPress} ><i class="bi bi-cart-plus"></i></Button>
             : 
             <Button id={thisId} variant="success" className="store-buttonInfo" onClick={onPress} ><i class="bi bi-cart-plus"></i></Button>

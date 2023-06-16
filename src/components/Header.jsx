@@ -41,7 +41,7 @@ function HeaderComponent(){
                     </div>
                     <div className="menu2" style={{display: "none"}}>
                         <Dropdown>
-                            <Dropdown.Toggle id="dropdown-basic" style={{color: "white", backgroundColor: "#083d5e", border: "none", fontSize: "30px"}}>
+                            <Dropdown.Toggle id="dropdown-basic" style={{color: "white", backgroundColor: "#083d5e", border: "none", fontSize: "24px", height:"36px", paddingTop:"0"}}>
                                 <i class="bi bi-list"></i>
                             </Dropdown.Toggle>
 

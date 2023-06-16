@@ -87,11 +87,11 @@ function Carrito({ModalId, itemClass}){
                         {
                             !userContext.userContex ?
                             <>
-                                <Link to='/login'><Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button></Link>
+                                <Link to='/login'><Button className="add-carrito" variant="success"><p>Proceder al pago </p><i class="bi bi-cart-check-fill"></i></Button></Link>
                                 <p>*Cuenta de usuario requerida para finalizar el pago</p>
                             </>
                             : navigate.pathname=='/checkout' ? null:
-                            <Link to='/checkout'><Button variant="success">Proceder al pago <i class="bi bi-cart-check-fill"></i></Button></Link>
+                            <Link to='/checkout'><Button className="add-carrito" variant="success"><p>Proceder al pago </p><i class="bi bi-cart-check-fill"></i></Button></Link>
 
                         }
                     </Modal.Footer>

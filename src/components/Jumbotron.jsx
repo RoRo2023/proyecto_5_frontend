@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 
 function JumbotronComponent(){
 
@@ -6,25 +7,28 @@ function JumbotronComponent(){
         <div className='carrusel'>
             <Carousel>
                 <Carousel.Item>
+                    <Link to='/catalog/648baeecb66be0826e31dc6b'>
                     <img
                     className="d-block w-100"
                     src="https://cdn.gameplanet.com/wp-content/uploads/2023/06/02120207/StreetFighter_6_Lanzamiento_slide_mvk-1536x525.jpg"
                     alt="First slide"
-                    />
+                    /></Link>
                 </Carousel.Item>
                 <Carousel.Item>
+                    <Link to='/catalog/648baeecb66be0826e31dc6d'>
                     <img
                     className="d-block w-100"
                     src="https://cdn.gameplanet.com/wp-content/uploads/2023/06/06133400/DiabloIV_slide_mvk-1536x525.jpg"
                     alt="Second slide"
-                    />
+                    /></Link>
                 </Carousel.Item>
                 <Carousel.Item>
+                    <Link to='/catalog/648baeecb66be0826e31dc6c'>
                     <img
                     className="d-block w-100"
                     src="https://cdn.gameplanet.com/wp-content/uploads/2023/05/11194801/TloZ_Tears_Lanzamiento_Slide_mvk-1536x525.jpg"
                     alt="Third slide"
-                    />
+                    /></Link>
                 </Carousel.Item>
             </Carousel>
         </div>  

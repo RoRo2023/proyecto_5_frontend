@@ -150,8 +150,9 @@ header nav{
   flex-direction: column;
 }
 
-.item-top img{
+.item-card img{
   justify-content: center;
+  max-width: 220px;
 }
 
 .badge{
@@ -224,7 +225,7 @@ header nav{
 
 /*Login */
 .login{
-  padding: 100px 0 0 0;
+  padding: 20vh 0 10vh 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -241,7 +242,7 @@ header nav{
 
 /*Signup*/
 .signup{
-  padding: 100px 0 0 0;
+  padding: 20vh 0 10vh 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -337,6 +338,10 @@ header nav{
 .user-info p{
   text-align: left;
   padding-left: 40px;
+
+  display: flex;
+  flex-direction: column;
+
 }
 
 .user-info h5{
@@ -491,18 +496,53 @@ dd{
     padding: 30px 0 10px;
 }
 
+@media screen and (max-width: 2000px) {
+  .catalogo{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 1770px) {
+  .catalogo{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-left: 10px;
+  }
+}
+
 @media screen and (max-width: 1460px) {
   .catalogo{
     grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 10px;
   }
 
+
+}
+
+@media screen and (max-width: 1200px) {
+  
+  .info-card{
+    flex-direction: column;
+  }
+
+  .info-img{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .user-info{
+    flex-direction: column;
+  }
+
+  .user-page>.info-card{
+    width: 100%;
+  }
 
 }
 
 @media screen and (max-width: 1140px) {
   .catalogo{
     grid-template-columns: 1fr 1fr;
-    padding-left: 10px;
   }
 
   .checkout{
@@ -528,23 +568,42 @@ dd{
 @media screen and (max-width: 900px) {
   .item-card{
     width: 25vw;
-    height: 80vh;
+    height: calc(25vw*2.5);
+    min-width: 180px;
+    min-height: 450px;
+    
   }
 
   .item-bottom>div>p{
     font-size: 30px;
   }
 
+  .item-card>a>img{
+    max-width: calc(25vw - 30px)!important;
+    min-width: 143px;
+  }
+  
   header nav{
     width: 95%;
     margin: 0 auto;
   }
+
+  .user-info p{
+    font-size: 5vw!important;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .price{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 770px) {
-  .item-card{
-    width: 20vw;
-    height: 70vh;
+  .compra>div>div{
+    max-width: 40vw;
   }
 
   .item-bottom{
@@ -554,11 +613,58 @@ dd{
   h2{
     font-size: 16px;
   }
+
+  #carrito>div{
+    max-width: 40vw;
+  }
+
+  .item-name{
+    display: none;
+  }
+  .add-carrito p{
+    display: none;
+  }
+
+  .user-name{
+    gap: 20px;
+  }
+
+  .user-name h3{
+    font-size: 7vw!important;
+  }
+
+  .user-icon{
+    font-size: 10vw;
+  }
+
+  .item-info>div>.modal{
+    max-width: 40vw;
+  }
 }
 
-@media screen and (max-width: 640px) {
-  #carrito{
-    max-width: 300px;
+@media screen and (max-width: 720px) {
+  .item-info{
+    justify-content: right;
+  }
+
+  .item-info>div>.modal{
+    max-width: 30vw;
+  }
+}
+
+@media screen and (max-width: 670px) {
+
+  .compra>div>div{
+    max-width: 30vw;
+  }
+  #carrito>div{
+    width: 30vw;
+  }
+
+  .finish-sale {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .header-text{
@@ -569,5 +675,12 @@ dd{
     display: flex!important;
     justify-content: center;
     align-items: center;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .bi-arrow-up-square{
+    display: none;
   }
 }
