@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { useFetch } from "../hooks/useFetch";
-//Estilos
-
+import { Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Carrito from "./Carrito";
-
 import { CatalogContext } from "../context/catalogContext";
 import BadgeComponent from "./Badge";
 import StoreButton from "./StoreButton";
@@ -37,7 +36,10 @@ function Catalog (){
             <nav className="compra">
                 <div className="catalogo">
                     {
-                        !data ? <span>Sin productos</span>
+                        !data ? 
+                        <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Cargando...</span>
+                        </Spinner>
                         :
                         data.map((product, index)=> (
                             <div className="item-card">
@@ -49,7 +51,7 @@ function Catalog (){
                                         <h2 style={{textAlign: "left"}}>{product.nombre}</h2>
                                     </div>
                                 </div>
-                                <img alt="" src={product.imagen} style={{maxWidth: "220px"}}/>
+                                <Link to={`/catalog/${product._id}`}><img alt="" src={product.imagen} style={{maxWidth: "220px"}}/></Link>
                                 <div className="item-bottom">
                                     <div>
                                         <p>{`$${numberWithCommas(product.precio)}`}</p>

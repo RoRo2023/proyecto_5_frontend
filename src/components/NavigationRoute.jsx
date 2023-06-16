@@ -7,14 +7,14 @@ import UserInfo from '../pages/UserInfo';
 
 import { useContext, useState } from 'react';
 import { UserContext } from '../context/userContex';
+import { useFetch } from "../hooks/useFetch";
+import ItemInfo from '../pages/ItemInfo';
 
 
 function NavigationRoute() {
 
     const [user, setUser] = useState(null);
     const [token, setToken] = useState('');
-
-    const { userContex } = useContext(UserContext)
 
     return (
         <Routes>
@@ -28,6 +28,8 @@ function NavigationRoute() {
             <Route path='/signup' element={<SignUp/>} />
             <Route path='/checkout' element={<Checkout/>} />
             <Route path='/userinfo' element={<UserInfo/>}/>
+            <Route path={`/catalog/:id`} element={<ItemInfo
+            />}/>
         </Routes>
     )
 }

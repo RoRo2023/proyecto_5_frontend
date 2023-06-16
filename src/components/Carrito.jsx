@@ -19,8 +19,13 @@ function Carrito({ModalId, itemClass}){
             setData(context.carritoContex);
             console.log(context.carritoContex)
         } else{
-            setData(null);
-            console.log(context.carritoContex)
+            if(navigate.pathname=='/userinfo'){
+                setData([]);
+                console.log(context.carritoContex)
+            }else{
+                setData(null);
+                console.log(context.carritoContex)
+            }
         }
     }, [context.carritoContex])
 
@@ -40,11 +45,11 @@ function Carrito({ModalId, itemClass}){
             console.log(error)
         }
     };
-
+//!navigate.pathname=='/userinfo'
     return(
         <div>
             {
-            !data ? <div style={{display: "none"}}></div>
+            !data ?<div style={{display: "none"}}></div>
             :
             <div
                 className="modal show"
@@ -53,10 +58,13 @@ function Carrito({ModalId, itemClass}){
                 <div style={{paddingLeft:"350px"}}></div>
                 <Modal.Dialog id={ModalId}>
                     <Modal.Header>
-                        <Modal.Title>Carrito</Modal.Title>
+                        <Modal.Title className='carrito-title'>Carrito</Modal.Title>
                     </Modal.Header>
                 
                     <Modal.Body style={{minHeight:"100px", height:'fitcontent'}}>
+                        {
+                            data.length==0 ?<span>Carrito vacío</span>:null
+                        }
                         {
                             data.map((product, index)=> (
                                 <div className={itemClass}>
@@ -71,6 +79,7 @@ function Carrito({ModalId, itemClass}){
                                 </div>
                             ))
                             }
+                            
                     </Modal.Body>
                 
                     <Modal.Footer className='finish-sale'>

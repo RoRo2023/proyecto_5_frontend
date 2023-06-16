@@ -1,6 +1,7 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
-import { useContext} from "react";
+import { useContext, useEffect} from "react";
 import { CatalogContext } from "../context/catalogContext";
+import { useNavigate } from "react-router-dom";
 
 import Carrito from "../components/Carrito";
 import HeaderComponent from "../components/Header";
@@ -9,6 +10,18 @@ import Footer from "../components/Footer";
 const Checkout = () => {
 
     const context = useContext(CatalogContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(context.carritoContex.length===0){
+            context.setTotalContext(0)
+            console.log(context.carritoContex)
+            navigate("/")
+        } else{
+            console.log(context.carritoContex)
+            navigate('/checkout')
+        }
+    }, [context.carritoContex])
 
     return (
         <>  

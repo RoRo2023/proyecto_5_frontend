@@ -4,7 +4,7 @@ import '../index.css'
 import '../App.css'
 
 //Utilidades
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../context/userContex';
 
@@ -16,8 +16,11 @@ function HeaderComponent(){
 
     const context = useContext(UserContext);
 
+    const navigate = useNavigate();
+
     const cerrarSesion = () => {
         context.setUserContext(null)
+        navigate('/')
     }
 
     return(
