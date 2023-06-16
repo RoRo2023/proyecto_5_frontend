@@ -27,7 +27,7 @@ function HeaderComponent(){
         <header>
             <nav>
                 <div className="header-logo">
-                    <Link to='/'><h1><i class="bi bi-arrow-up-square"></i>LEVEL UP</h1></Link>                  
+                    <Link to='/'><h1><i className="bi bi-arrow-up-square"></i>LEVEL UP</h1></Link>                  
                 </div>
                 {
                 !context.userContex ?
@@ -42,7 +42,7 @@ function HeaderComponent(){
                     <div className="menu2" style={{display: "none"}}>
                         <Dropdown>
                             <Dropdown.Toggle id="dropdown-basic" style={{color: "white", backgroundColor: "#083d5e", border: "none", fontSize: "24px", height:"36px", paddingTop:"0"}}>
-                                <i class="bi bi-list"></i>
+                                <i className="bi bi-list"></i>
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
@@ -56,7 +56,7 @@ function HeaderComponent(){
                 <div className="active-user">
                     <Dropdown>
                         <Dropdown.Toggle id="dropdown-basic" style={{color: "white", backgroundColor: "#083d5e", border: "none", fontSize: "24px", fontWeight:"600", height:"36px", paddingTop:"0"}}>
-                        {context.userContex.user}&nbsp;&nbsp;<i class="bi bi-person-circle"></i>
+                        {context.userContex.user}&nbsp;&nbsp;<i className="bi bi-person-circle"></i>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>

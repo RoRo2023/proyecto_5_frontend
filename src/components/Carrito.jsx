@@ -74,7 +74,7 @@ function Carrito({ModalId, itemClass}){
                                     </div>
                                     <div>
                                         <h4>{`$${numberWithCommas(product.precio)}`}</h4>
-                                        <Button variant="danger" style={{height: "42px", width: "42px"}} onClick={() => handleRemoveItem(index)}><i class="bi bi-x-lg"></i></Button>
+                                        <Button variant="danger" style={{height: "42px", width: "42px"}} onClick={() => handleRemoveItem(index)}><i className="bi bi-x-lg"></i></Button>
                                     </div>
                                 </div>
                             ))
@@ -87,11 +87,11 @@ function Carrito({ModalId, itemClass}){
                         {
                             !userContext.userContex ?
                             <>
-                                <Link to='/login'><Button className="add-carrito" variant="success"><p>Proceder al pago </p><i class="bi bi-cart-check-fill"></i></Button></Link>
+                                <Link to='/login'><Button className="add-carrito" variant="success"><p>Proceder al pago </p><i className="bi bi-cart-check-fill"></i></Button></Link>
                                 <p>*Cuenta de usuario requerida para finalizar el pago</p>
                             </>
                             : navigate.pathname=='/checkout' ? null:
-                            <Link to='/checkout'><Button className="add-carrito" variant="success"><p>Proceder al pago </p><i class="bi bi-cart-check-fill"></i></Button></Link>
+                            <Link to='/checkout'><Button className="add-carrito" variant="success"><p>Proceder al pago </p><i className="bi bi-cart-check-fill"></i></Button></Link>
 
                         }
                     </Modal.Footer>
