@@ -4,7 +4,7 @@ const login = async (email, password) => {
 
     try {
         const response = await axios.post(
-            'http://localhost:5500/user/login',
+            'https://backend-i5o0.onrender.com/user/login',
             {
                 email: email,
                 password: password
@@ -24,7 +24,7 @@ const signup = async (email, name, password, age) => {
 
     try {
         const response = await axios.post(
-            'http://localhost:5500/user',
+            'https://backend-i5o0.onrender.com/user',
             {
                 email: email,
                 name: name,

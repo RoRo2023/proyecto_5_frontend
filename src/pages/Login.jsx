@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 //Estilos
 import '../index.css';
-import context from "react-bootstrap/esm/AccordionContext";
 
 const Login = () =>{
 

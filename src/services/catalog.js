@@ -4,7 +4,7 @@ const getCatalog = async () => {
 
     try {
         const response = await axios.get(
-            'http://localhost:5500/catalog',
+            'https://backend-i5o0.onrender.com/catalog',
         )
 
         console.log("attempting to get items");

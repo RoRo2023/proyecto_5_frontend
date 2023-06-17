@@ -42,7 +42,7 @@ const SignUpComponent = () => {
                 if (!dataLogin) {
                     alert('Error de authenticacion');
                 } else {
-                    setUserContext(dataLogin.user.user); // context
+                    setUserContext(dataLogin.user); // context
                 }
             }
         }
