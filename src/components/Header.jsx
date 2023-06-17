@@ -34,9 +34,9 @@ function HeaderComponent(){
                 <>
                     <div className="header-text">
                         <ul>
-                            <li><Link to='/login'><a href="#">Iniciar sesión</a></Link></li>
+                            <li><Link to='/login'>Iniciar sesión</Link></li>
                             <li>|</li>
-                            <li><Link to='/signup'><a href="#">Registrarse</a></Link></li>
+                            <li><Link to='/signup'>Registrarse</Link></li>
                         </ul>
                     </div>
                     <div className="menu2" style={{display: "none"}}>

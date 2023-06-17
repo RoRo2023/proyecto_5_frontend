@@ -11,7 +11,7 @@ function Catalog (){
     const context = useContext(CatalogContext);
 
     const { data } = useFetch({
-        url:'http://localhost:5500/catalog'
+        url:'https://backend-i5o0.onrender.com/catalog'
     })
 
       const onSubmit = async event => {
